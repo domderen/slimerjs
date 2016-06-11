@@ -404,22 +404,22 @@ function getDownloadSpec() {
   var cdnUrl = process.env.npm_config_slimerjs_cdnurl ||
       process.env.SLIMERJS_CDNURL ||
       'https://download.slimerjs.org/releases'
-  var downloadUrl = cdnUrl + '/' + helper.version +'/slimerjs-'+ helper.version +'-'
+  var downloadUrl = cdnUrl + '/' + helper.version +'/slimerjs-'+ helper.version
   var checksum = ''
 
   var platform = getTargetPlatform()
   var arch = getTargetArch()
   if (platform === 'linux' && arch === 'x64') {
-    downloadUrl += 'linux-x86_64.tar.bz2'
+    downloadUrl += '.zip'
     checksum = '14e707c838e85f8131fb59b8cc38b5d81b4d45c194db7432e97ff331c913b89d'
   } else if (platform === 'linux' && arch == 'ia32') {
-    downloadUrl += 'linux-i686.tar.bz2'
+    downloadUrl += '.zip'
     checksum = '4bc37cb8c58e5ddfa76ffd066ebceb04529d74a0e52066d9bed9759c30e5841b'
   } else if (platform === 'darwin' || platform === 'openbsd' || platform === 'freebsd') {
-    downloadUrl += 'mac.tar.bz2'
+    downloadUrl += '.zip'
     checksum = '5c3ba9a83328a54b1fc6a6106abdd6d6b2117768f36ad43b9b0230a3ad7113cd'
   } else if (platform === 'win32') {
-    downloadUrl += 'win32.zip'
+    downloadUrl += '.zip'
     checksum = '4eead5e92a87f655f999ae79bf3c4eac191ec4bd93a19ffd8bbb2a12a1cb1ef4'
   } else {
     return null
